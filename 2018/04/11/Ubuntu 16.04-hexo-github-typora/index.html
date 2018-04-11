@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="CNYALI" />
+
+
+
+<meta name="description" content="Ubuntu 16.04 安装 hexo,git,typora首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs;123sudo apt-get install nodejssudo apt install nodejs-legacysudo apt install npm 更换成淘宝的镜像，否则非常慢1sudo npm config set regist">
+<meta name="keywords" content="hexo,github,typora">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 16.04-hexo-github-typora">
+<meta property="og:url" content="http://cnyali.cn/2018/04/11/Ubuntu 16.04-hexo-github-typora/index.html">
+<meta property="og:site_name" content="Free loop~">
+<meta property="og:description" content="Ubuntu 16.04 安装 hexo,git,typora首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs;123sudo apt-get install nodejssudo apt install nodejs-legacysudo apt install npm 更换成淘宝的镜像，否则非常慢1sudo npm config set regist">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-11T08:26:25.011Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu 16.04-hexo-github-typora">
+<meta name="twitter:description" content="Ubuntu 16.04 安装 hexo,git,typora首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs;123sudo apt-get install nodejssudo apt install nodejs-legacysudo apt install npm 更换成淘宝的镜像，否则非常慢1sudo npm config set regist">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Free loop~" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/cnyali.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Ubuntu 16.04-hexo-github-typora | Free loop~</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/cnyali.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">CNYALI</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Fight for NOI2018</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typora/">typora</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://cnyali-lk.com">老K</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">CNYALI</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/cnyali.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">CNYALI</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Fight for NOI2018</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Ubuntu 16.04-hexo-github-typora" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/04/11/Ubuntu 16.04-hexo-github-typora/" class="article-date">
+      <time datetime="2018-04-11T04:03:48.000Z" itemprop="datePublished">2018-04-11</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu 16.04-hexo-github-typora
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/教程/">教程</a><a class="article-category-link" href="/categories/教程/其它/">其它</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typora/">typora</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="Ubuntu-16-04-安装-hexo-git-typora"><a href="#Ubuntu-16-04-安装-hexo-git-typora" class="headerlink" title="Ubuntu 16.04 安装 hexo,git,typora"></a>Ubuntu 16.04 安装 hexo,git,typora</h3><h4 id="首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs"><a href="#首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs" class="headerlink" title="首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs;"></a>首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt install nodejs-legacy</span><br><span class="line">sudo apt install npm</span><br></pre></td></tr></table></figure>
+<h4 id="更换成淘宝的镜像，否则非常慢"><a href="#更换成淘宝的镜像，否则非常慢" class="headerlink" title="更换成淘宝的镜像，否则非常慢"></a>更换成淘宝的镜像，否则非常慢</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="可以通过-sudo-npm-config-list-查看是否生效"><a href="#可以通过-sudo-npm-config-list-查看是否生效" class="headerlink" title="可以通过 sudo npm config list 查看是否生效"></a>可以通过 sudo npm config list 查看是否生效</h4><h4 id="安装更新版本的工具N"><a href="#安装更新版本的工具N" class="headerlink" title="安装更新版本的工具N"></a>安装更新版本的工具N</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install n -g</span><br></pre></td></tr></table></figure>
+<h4 id="更新版本"><a href="#更新版本" class="headerlink" title="更新版本"></a>更新版本</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n stable</span><br></pre></td></tr></table></figure>
+<h4 id="可以看到有-installed：版号，说明更新成功"><a href="#可以看到有-installed：版号，说明更新成功" class="headerlink" title="可以看到有 installed：版号，说明更新成功"></a>可以看到有 installed：版号，说明更新成功</h4><h4 id="安装-hexo"><a href="#安装-hexo" class="headerlink" title="安装 hexo"></a>安装 hexo</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h3 id="安装-git"><a href="#安装-git" class="headerlink" title="安装 git"></a>安装 git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure>
+<h4 id="解决安装中进程被锁死的问题"><a href="#解决安装中进程被锁死的问题" class="headerlink" title="解决安装中进程被锁死的问题"></a>解决安装中进程被锁死的问题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /var/cache/apt/archives/lock</span><br><span class="line">sudo rm /var/lib/dpkg/lock</span><br></pre></td></tr></table></figure>
+<h4 id="安装-hexo-与-git-关联"><a href="#安装-hexo-与-git-关联" class="headerlink" title="安装 hexo 与 git 关联"></a>安装 hexo 与 git 关联</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="git-关联-github"><a href="#git-关联-github" class="headerlink" title="git 关联 github"></a>git 关联 github</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;</span><br><span class="line">git config --global user.email &quot;youremail@XX.com&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="生成-SSH-密钥"><a href="#生成-SSH-密钥" class="headerlink" title="生成 SSH 密钥"></a>生成 SSH 密钥</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail@XX.com&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="测试密钥与github-连接"><a href="#测试密钥与github-连接" class="headerlink" title="测试密钥与github 连接"></a>测试密钥与github 连接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h4 id="新建博文"><a href="#新建博文" class="headerlink" title="新建博文"></a>新建博文</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;title&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改 _config.yml"></a>修改 _config.yml</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit _config.yml</span><br></pre></td></tr></table></figure>
+<h4 id="编译并发布博文"><a href="#编译并发布博文" class="headerlink" title="编译并发布博文"></a>编译并发布博文</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+<h4 id="最后还需要在github仓库里的seting-设置-domain才能访问"><a href="#最后还需要在github仓库里的seting-设置-domain才能访问" class="headerlink" title="最后还需要在github仓库里的seting 设置 domain才能访问"></a>最后还需要在github仓库里的seting 设置 domain才能访问</h4><h4 id="在你的github-name-github-io-创建自定义域名"><a href="#在你的github-name-github-io-创建自定义域名" class="headerlink" title="在你的github_name.github.io 创建自定义域名"></a>在你的github_name.github.io 创建自定义域名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//你要绑定的域名</span><br><span class="line">cnyali.cn</span><br></pre></td></tr></table></figure>
+<h4 id="hexo-安装主题"><a href="#hexo-安装主题" class="headerlink" title="hexo 安装主题"></a>hexo 安装主题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/litten/hexo-theme-yilia.git themes/hexo-theme-yilia</span><br></pre></td></tr></table></figure>
+<h4 id="hexo-启用主题"><a href="#hexo-启用主题" class="headerlink" title="hexo 启用主题"></a>hexo 启用主题</h4><h5 id="修改博客目录D-hexo-config-yml中的theme属性，将其设置为hexo-hexo-theme-yilia"><a href="#修改博客目录D-hexo-config-yml中的theme属性，将其设置为hexo-hexo-theme-yilia" class="headerlink" title="修改博客目录D:\hexo_config.yml中的theme属性，将其设置为hexo/hexo-theme-yilia"></a>修改博客目录D:\hexo_config.yml中的theme属性，将其设置为hexo/hexo-theme-yilia</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme:hexo/hexo-theme-yilia</span><br></pre></td></tr></table></figure>
+<h4 id="新建标签页面"><a href="#新建标签页面" class="headerlink" title="新建标签页面"></a>新建标签页面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<h4 id="一起奇怪的命令"><a href="#一起奇怪的命令" class="headerlink" title="一起奇怪的命令"></a>一起奇怪的命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//init</span><br><span class="line">git init</span><br><span class="line">git remote add origin git@git.coding.net:6666/666.git</span><br><span class="line">//up</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;$%^&amp;$&quot;</span><br><span class="line">git push origin master</span><br><span class="line">//down</span><br><span class="line">git pull origin master</span><br><span class="line">//git clone git@git.coding.net:6666/666.git</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/04/11/Ubuntu 16.04-hexo-github-typora/">Ubuntu 16.04-hexo-github-typora</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">CNYALI</a></p>
+        <p><span>发布时间:</span>2018-04-11, 12:03:48</p>
+        <p><span>最后更新:</span>2018-04-11, 16:26:25</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/11/Ubuntu 16.04-hexo-github-typora/" title="Ubuntu 16.04-hexo-github-typora">http://cnyali.cn/2018/04/11/Ubuntu 16.04-hexo-github-typora/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cnyali.cn/2018/04/11/Ubuntu 16.04-hexo-github-typora/　　作者: CNYALI" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ubuntu-16-04-安装-hexo-git-typora"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu 16.04 安装 hexo,git,typora</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs"><span class="toc-number">1.1.</span> <span class="toc-text">首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更换成淘宝的镜像，否则非常慢"><span class="toc-number">1.2.</span> <span class="toc-text">更换成淘宝的镜像，否则非常慢</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可以通过-sudo-npm-config-list-查看是否生效"><span class="toc-number">1.3.</span> <span class="toc-text">可以通过 sudo npm config list 查看是否生效</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装更新版本的工具N"><span class="toc-number">1.4.</span> <span class="toc-text">安装更新版本的工具N</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#更新版本"><span class="toc-number">1.5.</span> <span class="toc-text">更新版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#可以看到有-installed：版号，说明更新成功"><span class="toc-number">1.6.</span> <span class="toc-text">可以看到有 installed：版号，说明更新成功</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-hexo"><span class="toc-number">1.7.</span> <span class="toc-text">安装 hexo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-git"><span class="toc-number">2.</span> <span class="toc-text">安装 git</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解决安装中进程被锁死的问题"><span class="toc-number">2.1.</span> <span class="toc-text">解决安装中进程被锁死的问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-hexo-与-git-关联"><span class="toc-number">2.2.</span> <span class="toc-text">安装 hexo 与 git 关联</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-关联-github"><span class="toc-number">3.</span> <span class="toc-text">git 关联 github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#生成-SSH-密钥"><span class="toc-number">3.1.</span> <span class="toc-text">生成 SSH 密钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试密钥与github-连接"><span class="toc-number">3.2.</span> <span class="toc-text">测试密钥与github 连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#新建博文"><span class="toc-number">3.3.</span> <span class="toc-text">新建博文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改-config-yml"><span class="toc-number">3.4.</span> <span class="toc-text">修改 _config.yml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编译并发布博文"><span class="toc-number">3.5.</span> <span class="toc-text">编译并发布博文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最后还需要在github仓库里的seting-设置-domain才能访问"><span class="toc-number">3.6.</span> <span class="toc-text">最后还需要在github仓库里的seting 设置 domain才能访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在你的github-name-github-io-创建自定义域名"><span class="toc-number">3.7.</span> <span class="toc-text">在你的github_name.github.io 创建自定义域名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hexo-安装主题"><span class="toc-number">3.8.</span> <span class="toc-text">hexo 安装主题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hexo-启用主题"><span class="toc-number">3.9.</span> <span class="toc-text">hexo 启用主题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#修改博客目录D-hexo-config-yml中的theme属性，将其设置为hexo-hexo-theme-yilia"><span class="toc-number">3.9.1.</span> <span class="toc-text">修改博客目录D:\hexo_config.yml中的theme属性，将其设置为hexo/hexo-theme-yilia</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#新建标签页面"><span class="toc-number">3.10.</span> <span class="toc-text">新建标签页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一起奇怪的命令"><span class="toc-number">3.11.</span> <span class="toc-text">一起奇怪的命令</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Ubuntu 16.04-hexo-github-typora　| Free loop~　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/04/11/Ubuntu 16.04-hexo-github-typora/">Ubuntu 16.04-hexo-github-typora</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 CNYALI
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+
+	<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+</footer>
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        $("a").attr("target", "_blank");
+        $("#scroll a, #toc a").removeAttr("target");
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
