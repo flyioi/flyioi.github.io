@@ -14,17 +14,19 @@
 <meta name="author" content="CNYALI" />
 
 
-    
-    
 
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Free loop~">
-<meta property="og:url" content="http://cnyali.cn/index.html">
+<meta name="description" content="LUOGU 1736 创意吃鱼法题目大意1在一个N*M的01矩阵中找一个最大的正方形符合对角线都是1，其它都是0。n,m&amp;lt;=2500">
+<meta name="keywords" content="DP,动态规划,DP优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LUOGU 1736 DP">
+<meta property="og:url" content="http://cnyali.cn/2018/05/03/LUOGU-1736-DP/index.html">
 <meta property="og:site_name" content="Free loop~">
+<meta property="og:description" content="LUOGU 1736 创意吃鱼法题目大意1在一个N*M的01矩阵中找一个最大的正方形符合对角线都是1，其它都是0。n,m&amp;lt;=2500">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-03T08:20:11.110Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free loop~">
+<meta name="twitter:title" content="LUOGU 1736 DP">
+<meta name="twitter:description" content="LUOGU 1736 创意吃鱼法题目大意1在一个N*M的01矩阵中找一个最大的正方形符合对角线都是1，其它都是0。n,m&amp;lt;=2500">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,13 +54,11 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Free loop~</title>
+<title>LUOGU 1736 DP | Free loop~</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,8 +67,8 @@
     var yiliaConfig = {
         fancybox: true,
         animate: true,
-        isHome: true,
-        isPost: false,
+        isHome: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -242,9 +242,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-LUOGU-1736-DP" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LUOGU-1736-DP" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2018/05/03/LUOGU-1736-DP/" class="article-date">
@@ -262,185 +260,120 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/03/LUOGU-1736-DP/">LUOGU 1736 DP</a>
+    <h1 class="article-title" itemprop="name">
+      LUOGU 1736 DP
     </h1>
   
 
       </header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="LUOGU-1736-创意吃鱼法"><a href="#LUOGU-1736-创意吃鱼法" class="headerlink" title="LUOGU 1736 创意吃鱼法"></a>LUOGU 1736 创意吃鱼法</h3><h4 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在一个N*M的01矩阵中找一个最大的正方形符合对角线都是1，其它都是0。n,m&lt;=2500</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/算法/">算法</a><a class="article-category-link" href="/categories/算法/动态规划/">动态规划</a><a class="article-category-link" href="/categories/算法/动态规划/矩形动态规划/">矩形动态规划</a>
     </div>
 
 
-      
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP/">DP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DP优化/">DP优化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/2018/05/03/LUOGU-1736-DP/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/04/11/test/" class="article-date">
-      <time datetime="2018-04-11T08:37:56.000Z" itemprop="datePublished">2018-04-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/11/test/">test</a>
-    </h1>
-  
-
-      </header>
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h3 id="A-B-问题"><a href="#A-B-问题" class="headerlink" title="A+B 问题"></a>A+B 问题</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><pre><code>输入 A,B两个值，求和
-</code></pre>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/教程/">教程</a><a class="article-category-link" href="/categories/教程/C-语言/">C++语言</a>
-    </div>
-
+        <h3 id="LUOGU-1736-创意吃鱼法"><a href="#LUOGU-1736-创意吃鱼法" class="headerlink" title="LUOGU 1736 创意吃鱼法"></a>LUOGU 1736 创意吃鱼法</h3><h4 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在一个N*M的01矩阵中找一个最大的正方形符合对角线都是1，其它都是0。n,m&lt;=2500</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>####试题分析</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">本题暴力枚举只能过小部分的点，正解如下，转自网上，正解中用到了矩形DP中常用的预处理优化</span><br><span class="line"></span><br><span class="line">这道题其实和P1387 最大正方形很像，只不过多了一个预处理罢了</span><br><span class="line">s1[i][j]表示（i，j）最多向左（或右）延伸多少个格子，使这些格子中的数都是0（不包括（i，j））</span><br><span class="line">s2[i][j]表示（i，j）最多向上延伸多少个格子，使这些格子中的数都是0（不包括（i，j））</span><br><span class="line">f[i][j]表以（i，j）为右下（左下）角的最大对角线长度</span><br><span class="line">方程：f[i][j]=min(f[i-1][j-1],min(s1[i][j-1],s2[i-1][j]))+1;</span><br><span class="line">不懂可以根据这个例子想想</span><br><span class="line">1 0 0 </span><br><span class="line">0 1 0 </span><br><span class="line">0 0 1 dp两遍，分别对应两条对角线</span><br></pre></td></tr></table></figure>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;map&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,m,ans;</span><br><span class="line">int a[2509][2509],f[2509][2509],s1[2509][2509],s2[2509][2509];//s1为横向，s2为纵向 </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    //第一遍左上——右下 </span><br><span class="line">    for(int i=1;i&lt;=n;i++)</span><br><span class="line">    for(int j=1;j&lt;=m;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d&quot;,&amp;a[i][j]);</span><br><span class="line">        if(!a[i][j])</span><br><span class="line">        &#123;</span><br><span class="line">            s1[i][j]=s1[i][j-1]+1;</span><br><span class="line">            s2[i][j]=s2[i-1][j]+1;</span><br><span class="line">        &#125;</span><br><span class="line">        if(a[i][j])</span><br><span class="line">        f[i][j]=min(f[i-1][j-1],min(s1[i][j-1],s2[i-1][j]))+1;</span><br><span class="line">        ans=max(ans,f[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    //第二遍右上——左下 </span><br><span class="line">    memset(f,0,sizeof(f)); </span><br><span class="line">    memset(s1,0,sizeof(s1));//数组置0 </span><br><span class="line">    memset(s2,0,sizeof(s2)); </span><br><span class="line">    for(int i=1;i&lt;=n;i++)</span><br><span class="line">    for(int j=m;j&gt;=1;j--)</span><br><span class="line">    &#123;</span><br><span class="line">        if(!a[i][j])</span><br><span class="line">        &#123;</span><br><span class="line">            s1[i][j]=s1[i][j+1]+1;</span><br><span class="line">            s2[i][j]=s2[i-1][j]+1;</span><br><span class="line">        &#125;</span><br><span class="line">        if(a[i][j])</span><br><span class="line">        f[i][j]=min(f[i-1][j+1],min(s1[i][j+1],s2[i-1][j]))+1;</span><br><span class="line">        ans=max(ans,f[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-入门/">C++入门</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/04/11/test/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Ubuntu 16.04-hexo-github-typora" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/04/11/Ubuntu 16.04-hexo-github-typora/" class="article-date">
-      <time datetime="2018-04-11T04:03:48.000Z" itemprop="datePublished">2018-04-11</time>
-</a>
-
-
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/05/03/LUOGU-1736-DP/">LUOGU 1736 DP</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">CNYALI</a></p>
+        <p><span>发布时间:</span>2018-05-03, 16:05:00</p>
+        <p><span>最后更新:</span>2018-05-03, 16:20:11</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/05/03/LUOGU-1736-DP/" title="LUOGU 1736 DP">http://cnyali.cn/2018/05/03/LUOGU-1736-DP/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cnyali.cn/2018/05/03/LUOGU-1736-DP/　　作者: CNYALI" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+
+
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/11/Ubuntu 16.04-hexo-github-typora/">Ubuntu 16.04-hexo-github-typora</a>
-    </h1>
-  
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/04/11/test/">
+                    test
+                </a>
+            </div>
+        
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="Ubuntu-16-04-安装-hexo-git-typora"><a href="#Ubuntu-16-04-安装-hexo-git-typora" class="headerlink" title="Ubuntu 16.04 安装 hexo,git,typora"></a>Ubuntu 16.04 安装 hexo,git,typora</h3><h4 id="首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs"><a href="#首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs" class="headerlink" title="首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs;"></a>首先安装noejs，Ubuntu源中的nodejs时旧版本，所以需要在安装后更新nodejs;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt install nodejs-legacy</span><br><span class="line">sudo apt install npm</span><br></pre></td></tr></table></figure>
-<h4 id="更换成淘宝的镜像，否则非常慢"><a href="#更换成淘宝的镜像，否则非常慢" class="headerlink" title="更换成淘宝的镜像，否则非常慢"></a>更换成淘宝的镜像，否则非常慢</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/教程/">教程</a><a class="article-category-link" href="/categories/教程/其它/">其它</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typora/">typora</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2018/04/11/Ubuntu 16.04-hexo-github-typora/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#LUOGU-1736-创意吃鱼法"><span class="toc-number">1.</span> <span class="toc-text">LUOGU 1736 创意吃鱼法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目大意"><span class="toc-number">1.1.</span> <span class="toc-text">题目大意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">1.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"LUOGU 1736 DP　| Free loop~　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -448,9 +381,33 @@
 
 
 
+    
 
-  
-  
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/04/11/test/" title="下一篇: test">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/03/LUOGU-1736-DP/">LUOGU 1736 DP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/11/test/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/11/Ubuntu 16.04-hexo-github-typora/">Ubuntu 16.04-hexo-github-typora</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
