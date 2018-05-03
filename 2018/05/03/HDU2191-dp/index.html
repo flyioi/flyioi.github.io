@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="LUOGU 1736 创意吃鱼法题目大意1在一个N*M的01矩阵中找一个最大的正方形符合对角线都是1，其它都是0。n,m&amp;lt;=2500">
+<meta name="description" content="HDU2191悼念512汶川大地震遇难同胞题目大意1一共有资金n元，而市场有m种大米，每种大米都是袋装产品，其价格不等，并且只能整袋购买。 请问：你用有限的资金最多能采购多少公斤粮食呢？ 题解11234567891011121314151617181920212223242526272829303132333435//多重背包转换成01背包来做#include&amp;lt;cstdio&amp;gt;#incl">
 <meta name="keywords" content="DP,动态规划,DP优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LUOGU 1736 DP">
-<meta property="og:url" content="http://cnyali.cn/2018/05/03/LUOGU-1736-DP/index.html">
+<meta property="og:title" content="HDU2191 dp">
+<meta property="og:url" content="http://cnyali.cn/2018/05/03/HDU2191-dp/index.html">
 <meta property="og:site_name" content="Free loop~">
-<meta property="og:description" content="LUOGU 1736 创意吃鱼法题目大意1在一个N*M的01矩阵中找一个最大的正方形符合对角线都是1，其它都是0。n,m&amp;lt;=2500">
+<meta property="og:description" content="HDU2191悼念512汶川大地震遇难同胞题目大意1一共有资金n元，而市场有m种大米，每种大米都是袋装产品，其价格不等，并且只能整袋购买。 请问：你用有限的资金最多能采购多少公斤粮食呢？ 题解11234567891011121314151617181920212223242526272829303132333435//多重背包转换成01背包来做#include&amp;lt;cstdio&amp;gt;#incl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-03T09:07:14.186Z">
+<meta property="og:updated_time" content="2018-05-03T09:06:50.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LUOGU 1736 DP">
-<meta name="twitter:description" content="LUOGU 1736 创意吃鱼法题目大意1在一个N*M的01矩阵中找一个最大的正方形符合对角线都是1，其它都是0。n,m&amp;lt;=2500">
+<meta name="twitter:title" content="HDU2191 dp">
+<meta name="twitter:description" content="HDU2191悼念512汶川大地震遇难同胞题目大意1一共有资金n元，而市场有m种大米，每种大米都是袋装产品，其价格不等，并且只能整袋购买。 请问：你用有限的资金最多能采购多少公斤粮食呢？ 题解11234567891011121314151617181920212223242526272829303132333435//多重背包转换成01背包来做#include&amp;lt;cstdio&amp;gt;#incl">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>LUOGU 1736 DP | Free loop~</title>
+<title>HDU2191 dp | Free loop~</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -242,11 +242,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-LUOGU-1736-DP" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-HDU2191-dp" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/05/03/LUOGU-1736-DP/" class="article-date">
-      <time datetime="2018-05-03T08:05:00.000Z" itemprop="datePublished">2018-05-03</time>
+      <a href="/2018/05/03/HDU2191-dp/" class="article-date">
+      <time datetime="2018-05-03T09:01:56.000Z" itemprop="datePublished">2018-05-03</time>
 </a>
 
 
@@ -261,7 +261,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LUOGU 1736 DP
+      HDU2191 dp
     </h1>
   
 
@@ -270,7 +270,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法/">算法</a><a class="article-category-link" href="/categories/算法/动态规划/">动态规划</a><a class="article-category-link" href="/categories/算法/动态规划/矩形动态规划/">矩形动态规划</a>
+    <a class="article-category-link" href="/categories/算法/">算法</a><a class="article-category-link" href="/categories/算法/动态规划/">动态规划</a><a class="article-category-link" href="/categories/算法/动态规划/背包问题/">背包问题</a>
     </div>
 
 
@@ -286,10 +286,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="LUOGU-1736-创意吃鱼法"><a href="#LUOGU-1736-创意吃鱼法" class="headerlink" title="LUOGU 1736 创意吃鱼法"></a>LUOGU 1736 创意吃鱼法</h3><h4 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在一个N*M的01矩阵中找一个最大的正方形符合对角线都是1，其它都是0。n,m&lt;=2500</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h4 id="试题分析"><a href="#试题分析" class="headerlink" title="试题分析"></a>试题分析</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">本题暴力枚举只能过小部分的点，正解如下，转自网上，正解中用到了矩形DP中常用的预处理优化</span><br><span class="line"></span><br><span class="line">这道题其实和P1387 最大正方形很像，只不过多了一个预处理罢了</span><br><span class="line">s1[i][j]表示（i，j）最多向左（或右）延伸多少个格子，使这些格子中的数都是0（不包括（i，j））</span><br><span class="line">s2[i][j]表示（i，j）最多向上延伸多少个格子，使这些格子中的数都是0（不包括（i，j））</span><br><span class="line">f[i][j]表以（i，j）为右下（左下）角的最大对角线长度</span><br><span class="line">方程：f[i][j]=min(f[i-1][j-1],min(s1[i][j-1],s2[i-1][j]))+1;</span><br><span class="line">不懂可以根据这个例子想想</span><br><span class="line">1 0 0 </span><br><span class="line">0 1 0 </span><br><span class="line">0 0 1 dp两遍，分别对应两条对角线</span><br></pre></td></tr></table></figure>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,ans;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">2509</span>][<span class="number">2509</span>],f[<span class="number">2509</span>][<span class="number">2509</span>],s1[<span class="number">2509</span>][<span class="number">2509</span>],s2[<span class="number">2509</span>][<span class="number">2509</span>];<span class="comment">//s1为横向，s2为纵向 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="comment">//第一遍左上——右下 </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i][j]);</span><br><span class="line">        <span class="keyword">if</span>(!a[i][j])</span><br><span class="line">        &#123;</span><br><span class="line">            s1[i][j]=s1[i][j<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">            s2[i][j]=s2[i<span class="number">-1</span>][j]+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a[i][j])</span><br><span class="line">        f[i][j]=min(f[i<span class="number">-1</span>][j<span class="number">-1</span>],min(s1[i][j<span class="number">-1</span>],s2[i<span class="number">-1</span>][j]))+<span class="number">1</span>;</span><br><span class="line">        ans=max(ans,f[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//第二遍右上——左下 </span></span><br><span class="line">    <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="keyword">sizeof</span>(f)); </span><br><span class="line">    <span class="built_in">memset</span>(s1,<span class="number">0</span>,<span class="keyword">sizeof</span>(s1));<span class="comment">//数组置0 </span></span><br><span class="line">    <span class="built_in">memset</span>(s2,<span class="number">0</span>,<span class="keyword">sizeof</span>(s2)); </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&gt;=<span class="number">1</span>;j--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!a[i][j])</span><br><span class="line">        &#123;</span><br><span class="line">            s1[i][j]=s1[i][j+<span class="number">1</span>]+<span class="number">1</span>;</span><br><span class="line">            s2[i][j]=s2[i<span class="number">-1</span>][j]+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a[i][j])</span><br><span class="line">        f[i][j]=min(f[i<span class="number">-1</span>][j+<span class="number">1</span>],min(s1[i][j+<span class="number">1</span>],s2[i<span class="number">-1</span>][j]))+<span class="number">1</span>;</span><br><span class="line">        ans=max(ans,f[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="HDU2191悼念512汶川大地震遇难同胞"><a href="#HDU2191悼念512汶川大地震遇难同胞" class="headerlink" title="HDU2191悼念512汶川大地震遇难同胞"></a>HDU2191悼念512汶川大地震遇难同胞</h3><h4 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">一共有资金n元，而市场有m种大米，每种大米都是袋装产品，其价格不等，并且只能整袋购买。 请问：你用有限的资金最多能采购多少公斤粮食呢？</span><br></pre></td></tr></table></figure>
+<h4 id="题解1"><a href="#题解1" class="headerlink" title="题解1"></a>题解1</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//多重背包转换成01背包来做</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> W,n;</span><br><span class="line"><span class="keyword">int</span> w[<span class="number">2005</span>],v[<span class="number">2005</span>];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">20005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="keyword">sizeof</span>(dp));</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;W,&amp;n);</span><br><span class="line">        <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> a,b,c;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">            <span class="keyword">while</span>(c--)</span><br><span class="line">            &#123;</span><br><span class="line">                w[cnt]=a;</span><br><span class="line">                v[cnt]=b;</span><br><span class="line">                cnt++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;cnt;i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=W;j&gt;=w[i];j--)</span><br><span class="line">                dp[j]=max(dp[j],dp[j-w[i]]+v[i]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dp[W]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -298,13 +296,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/05/03/LUOGU-1736-DP/">LUOGU 1736 DP</a></p>
+        <p><span>本文标题:</span><a href="/2018/05/03/HDU2191-dp/">HDU2191 dp</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">CNYALI</a></p>
-        <p><span>发布时间:</span>2018-05-03, 16:05:00</p>
-        <p><span>最后更新:</span>2018-05-03, 17:07:14</p>
+        <p><span>发布时间:</span>2018-05-03, 17:01:56</p>
+        <p><span>最后更新:</span>2018-05-03, 17:06:50</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/05/03/LUOGU-1736-DP/" title="LUOGU 1736 DP">http://cnyali.cn/2018/05/03/LUOGU-1736-DP/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://cnyali.cn/2018/05/03/LUOGU-1736-DP/　　作者: CNYALI" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/05/03/HDU2191-dp/" title="HDU2191 dp">http://cnyali.cn/2018/05/03/HDU2191-dp/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cnyali.cn/2018/05/03/HDU2191-dp/　　作者: CNYALI" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -316,16 +314,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/05/03/HDU2191-dp/">
-                    HDU2191 dp
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/04/11/test/">
-                    test
+                <a href="/2018/05/03/LUOGU-1736-DP/">
+                    LUOGU 1736 DP
                 </a>
             </div>
         
@@ -337,7 +329,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#LUOGU-1736-创意吃鱼法"><span class="toc-number">1.</span> <span class="toc-text">LUOGU 1736 创意吃鱼法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目大意"><span class="toc-number">1.1.</span> <span class="toc-text">题目大意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#试题分析"><span class="toc-number">1.2.</span> <span class="toc-text">试题分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">1.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#HDU2191悼念512汶川大地震遇难同胞"><span class="toc-number">1.</span> <span class="toc-text">HDU2191悼念512汶川大地震遇难同胞</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目大意"><span class="toc-number">1.1.</span> <span class="toc-text">题目大意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题解1"><span class="toc-number">1.2.</span> <span class="toc-text">题解1</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -373,7 +365,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"LUOGU 1736 DP　| Free loop~　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"HDU2191 dp　| Free loop~　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -393,15 +385,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/05/03/HDU2191-dp/" title="上一篇: HDU2191 dp">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/04/11/test/" title="下一篇: test">
+            <a href="/2018/05/03/LUOGU-1736-DP/" title="下一篇: LUOGU 1736 DP">
                 <i class="fa fa-angle-right"></i>
             </a>
         
