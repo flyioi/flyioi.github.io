@@ -244,6 +244,70 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-DINIC-ditch" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/30/DINIC-ditch/" class="article-date">
+      <time datetime="2018-05-30T12:25:20.000Z" itemprop="datePublished">2018-05-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/30/DINIC-ditch/">DINIC-ditch</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="洛谷P2740-草地排水-DINIC-01矩阵"><a href="#洛谷P2740-草地排水-DINIC-01矩阵" class="headerlink" title="洛谷P2740 草地排水 DINIC+01矩阵"></a>洛谷P2740 草地排水 DINIC+01矩阵</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 100000000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXM 2000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 205</span></span><br><span class="line"><span class="keyword">int</span> a[MAXN][MAXN];</span><br><span class="line"><span class="keyword">int</span> vis[MAXN];</span><br><span class="line"><span class="keyword">int</span> cur[MAXN];</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(vis,<span class="number">-1</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">	vis[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	q.push(<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">		<span class="keyword">int</span> now=q.front();</span><br><span class="line">		q.pop();		</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		    <span class="keyword">if</span>(vis[i]&lt;<span class="number">0</span> &amp;&amp; a[now][i])&#123;</span><br><span class="line">	 		    vis[i]=vis[now]+<span class="number">1</span>;</span><br><span class="line">	 		    q.push(i);			</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(vis[n]&lt;<span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> w)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(u==n)</span><br><span class="line">		<span class="keyword">return</span> w;	</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;		</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span>&amp; i=cur[u];i&lt;=n;i++)&#123;</span><br><span class="line"> 	    <span class="keyword">if</span>(vis[i]==vis[u]+<span class="number">1</span>&amp;&amp;a[u][i])&#123;</span><br><span class="line">		    <span class="keyword">int</span> b=dfs(i,min(w-ans,a[u][i]));</span><br><span class="line">			a[u][i]-=b;</span><br><span class="line">			a[i][u]+=b;</span><br><span class="line">			ans+=b; </span><br><span class="line">        &#125; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t; </span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;m,&amp;n);		</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> u,v,w;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;u,&amp;v,&amp;w);</span><br><span class="line">		a[u][v]+=w;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(bfs())&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            cur[i]=<span class="number">1</span>;</span><br><span class="line">			ans+=dfs(<span class="number">1</span>,inf);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/算法/">算法</a><a class="article-category-link" href="/categories/算法/图论/">图论</a><a class="article-category-link" href="/categories/算法/图论/网络流/">网络流</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DINIC/">DINIC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络流/">网络流</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-DINIC" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
