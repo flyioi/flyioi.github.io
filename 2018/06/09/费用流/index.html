@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="CNYALI" />
+
+
+
+<meta name="description" content="最小费用最大流模板，洛谷P3381下面是我自己的写的邻接矩阵，容易懂，但是超时 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;cons">
+<meta name="keywords" content="网络流,费用流">
+<meta property="og:type" content="article">
+<meta property="og:title" content="费用流">
+<meta property="og:url" content="http://cnyali.cn/2018/06/09/费用流/index.html">
+<meta property="og:site_name" content="Free loop~">
+<meta property="og:description" content="最小费用最大流模板，洛谷P3381下面是我自己的写的邻接矩阵，容易懂，但是超时 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;cons">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-09T14:20:00.385Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="费用流">
+<meta name="twitter:description" content="最小费用最大流模板，洛谷P3381下面是我自己的写的邻接矩阵，容易懂，但是超时 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;cons">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Free loop~" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/cnyali.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>费用流 | Free loop~</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/cnyali.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">CNYALI</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">Fight for NOI2018</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-入门/">C++入门</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DINIC/">DINIC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP优化/">DP优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typora/">typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流/">网络流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/费用流/">费用流</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://cnyali-lk.com">老K</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">CNYALI</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/cnyali.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">CNYALI</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">Fight for NOI2018</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-费用流" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/06/09/费用流/" class="article-date">
+      <time datetime="2018-06-09T14:16:26.000Z" itemprop="datePublished">2018-06-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      费用流
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/算法/">算法</a><a class="article-category-link" href="/categories/算法/图论/">图论</a><a class="article-category-link" href="/categories/算法/图论/网络流/">网络流</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络流/">网络流</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/费用流/">费用流</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="最小费用最大流模板，洛谷P3381"><a href="#最小费用最大流模板，洛谷P3381" class="headerlink" title="最小费用最大流模板，洛谷P3381"></a>最小费用最大流模板，洛谷P3381</h4><p>下面是我自己的写的邻接矩阵，容易懂，但是超时</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">5000</span>+<span class="number">5</span>,maxm=<span class="number">100000</span>+<span class="number">5</span>,inf=<span class="number">1000000000</span>;</span><br><span class="line"><span class="keyword">int</span> w[maxn][maxn],f[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> n,m,s,t,e=<span class="number">0</span>,ans1,csum1;</span><br><span class="line"><span class="keyword">int</span> vis[maxn],dist[maxn],pre[maxn];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">spfa</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis,<span class="number">-1</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)dist[i]=inf;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q;</span><br><span class="line">    dist[s]=<span class="number">0</span>;vis[s]=<span class="number">0</span>;</span><br><span class="line">    q.push(s);</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        <span class="keyword">int</span> u=q.front();</span><br><span class="line">        q.pop();	vis[u]=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            <span class="keyword">if</span>(w[u][i] &amp;&amp; dist[i]&gt;dist[u]+f[u][i])&#123;</span><br><span class="line">                dist[i]=dist[u]+f[u][i];</span><br><span class="line">                pre[i]=u;</span><br><span class="line">                <span class="keyword">if</span>(vis[i]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                    q.push(i);	vis[i]=<span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dist[t]==inf)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    ans1=inf;</span><br><span class="line">    <span class="keyword">int</span> k=t;</span><br><span class="line">    <span class="keyword">while</span>(k!=s)&#123;</span><br><span class="line">        ans1=min(ans1,w[pre[k]][k]);</span><br><span class="line">        k=pre[k];</span><br><span class="line">    &#125;</span><br><span class="line">    k=t;</span><br><span class="line">    csum1=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(k!=s)&#123;</span><br><span class="line">        csum1+=f[pre[k]][k]*ans1;</span><br><span class="line">        w[pre[k]][k]-=ans1;</span><br><span class="line">        w[k][pre[k]]+=ans1;</span><br><span class="line">        k=pre[k];</span><br><span class="line">    &#125;	</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;t;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> u,v,uw,uc;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;u,&amp;v,&amp;uw,&amp;uc);</span><br><span class="line">        w[u][v]=uw;</span><br><span class="line">        f[u][v]=uc;	</span><br><span class="line">        f[v][u]=-uc;	</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>,csum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(spfa())&#123;</span><br><span class="line">        ans+=ans1;</span><br><span class="line">        csum+=csum1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,ans,csum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面是CZY大佬写的链式前向星，AC了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> REP(i, s, e) for(register int i = s; i &lt;= e ;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">5000</span> + <span class="number">5</span>, maxm = <span class="number">50000</span> + <span class="number">5</span>, inf((((<span class="number">1</span> &lt;&lt; <span class="number">30</span>) - <span class="number">1</span>) &lt;&lt; <span class="number">1</span>) + <span class="number">1</span>);</span><br><span class="line"><span class="keyword">int</span> bg[maxn], ne[maxm &lt;&lt; <span class="number">1</span>], to[maxm &lt;&lt; <span class="number">1</span>], w[maxm &lt;&lt; <span class="number">1</span>], cost[maxm &lt;&lt; <span class="number">1</span>], e = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z, <span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e++;</span><br><span class="line">    to[e] = y;</span><br><span class="line">    ne[e] = bg[x];</span><br><span class="line">    bg[x] = e;</span><br><span class="line">    w[e] = z;</span><br><span class="line">    cost[e] = c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, S, T;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> max_flow, min_cost;</span><br><span class="line"></span><br><span class="line"><span class="built_in">queue</span> &lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"><span class="keyword">int</span> dis[maxn], pre[maxn], Max[maxn];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">spfa</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    REP(i, <span class="number">1</span>, n) dis[i] = inf;</span><br><span class="line">    dis[S] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) q.pop();</span><br><span class="line">    q.push(S);</span><br><span class="line">    Max[S] = inf;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">register</span> <span class="keyword">int</span> x = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        vis[x] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = bg[x]; i ; i = ne[i])</span><br><span class="line">            <span class="keyword">if</span> (w[i] &gt; <span class="number">0</span> &amp;&amp; dis[to[i]] &gt; dis[x] + cost[i])</span><br><span class="line">            &#123;</span><br><span class="line">                dis[to[i]] = dis[x] + cost[i];</span><br><span class="line">                pre[to[i]] = i;</span><br><span class="line">                Max[to[i]] = min(Max[x], w[i]);</span><br><span class="line">                <span class="keyword">if</span> (!vis[to[i]])</span><br><span class="line">                &#123;</span><br><span class="line">                    vis[to[i]] = <span class="number">1</span>;</span><br><span class="line">                    q.push(to[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dis[T] != inf;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = T;</span><br><span class="line">    <span class="keyword">while</span> (x != S)</span><br><span class="line">    &#123;</span><br><span class="line">        w[pre[x]] -= Max[T];</span><br><span class="line">        w[pre[x] ^ <span class="number">1</span>] += Max[T];</span><br><span class="line">        x = to[pre[x] ^ <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    max_flow += Max[T];</span><br><span class="line">    min_cost += Max[T] * dis[T];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; S &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x, y, z, c;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>, &amp;x, &amp;y, &amp;z, &amp;c);</span><br><span class="line">        add(x, y, z, c);</span><br><span class="line">        add(y, x, <span class="number">0</span>, -c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (spfa()) update();</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max_flow &lt;&lt; <span class="string">' '</span> &lt;&lt; min_cost;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>撒花、✿✿ヽ(°▽°)ノ✿</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/06/09/费用流/">费用流</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">CNYALI</a></p>
+        <p><span>发布时间:</span>2018-06-09, 22:16:26</p>
+        <p><span>最后更新:</span>2018-06-09, 22:20:00</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/06/09/费用流/" title="费用流">http://cnyali.cn/2018/06/09/费用流/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://cnyali.cn/2018/06/09/费用流/　　作者: CNYALI" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/05/30/DINIC-HDU3599/">
+                    DINIC-HDU3599
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#最小费用最大流模板，洛谷P3381"><span class="toc-number">1.</span> <span class="toc-text">最小费用最大流模板，洛谷P3381</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-6 i,
+        .toc-level-6 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"费用流　| Free loop~　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/05/30/DINIC-HDU3599/" title="下一篇: DINIC-HDU3599">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/06/09/费用流/">费用流</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/DINIC-HDU3599/">DINIC-HDU3599</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/DINIC-ditch/">DINIC-ditch</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/30/DINIC/">DINIC</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/03/HDU2191-dp/">HDU2191 dp</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/03/LUOGU-1736-DP/">LUOGU 1736 DP</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/11/test/">test</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/04/11/Ubuntu 16.04-hexo-github-typora/">Ubuntu 16.04-hexo-github-typora</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2018 CNYALI
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+
+	<p>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></p>
+</footer>
+
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        $("a").attr("target", "_blank");
+        $("#scroll a, #toc a").removeAttr("target");
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
